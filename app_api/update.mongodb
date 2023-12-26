@@ -1,0 +1,14 @@
+const database = 'mekanbul';
+use(database);
+db.venues.updateOne({"name":"Starbucks"},
+  {$push: {"comments": 
+    {
+      "_id": ObjectId(),
+      "author": "Zeynep",
+      "rating": 4,
+      "text": "İdare eder",
+      "date": new Date()
+    }
+  }
+}
+)
